@@ -16,4 +16,8 @@ def register():
 def login():
     return render_template('login.html')
 
+@app.rout("/test")
+def test():
+    return render_template('progression.html')
+
 
