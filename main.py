@@ -19,7 +19,7 @@ def login():
     return render_template('login.html')
 
 
-@app.rout("/test")
+@app.route("/test")
 def test():
     return render_template('progression.html')
 
