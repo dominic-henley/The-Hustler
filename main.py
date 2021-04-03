@@ -8,13 +8,16 @@ app = Flask(__name__)
 def home():
     return render_template('homepage.html')
 
+
 @app.route("/register")
 def register():
     return render_template('register.html')
 
+
 @app.route("/login")
 def login():
     return render_template('login.html')
+
 
 @app.rout("/test")
 def test():
