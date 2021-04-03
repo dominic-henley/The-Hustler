@@ -5,6 +5,7 @@
     <title>Progression</title>
     <link href="../static/style.css" rel="stylesheet" type="text/css">
     <!-- <script type="text/javascript" src="../progressionbar.js"></script> -->
+
 </head>
 <body onload="move()">
     <div id="myProgress">
@@ -13,24 +14,7 @@
 
 <br>
 <button onclick="location.reload()">Click Me</button>
-<script>
-    function move() {
-    var elem = document.getElementById("myBar");
-    var width = 10;
-    var id = setInterval(frame, 10);
-
-    elem.style.width = width + "%";
-    elem.innerHTML = width + "%";
-
-
-    function frame() {
-        width = 100;
-        elem.style.width = width + "%";
-        elem.innerHTML = width + "%";
-        clearInterval(id);
-
-    }
-}</script>
+<script type=text/javascript src="{{ url_for('static', filename='progressionbar.js') }}"></script>
 </body>
 
 </html>

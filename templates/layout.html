@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    {% if title %}
+        <title>The Hustler - {{ title }}</title>
+    {% else %}
+        <title>The Hustler</title>
+    {% endif %}
 </head>
 <body>
     <nav class="navbar">
         <ul class="">
-            <li class=""><a href="homepage.html">HomePage</a></li>
-            <li class=""><a href="progression.html">Progress</a></li>
-            <li class=""><a href="login.html">Log In</a></li>
+            <li class=""><a href="home">Home Page</a></li>
+            <li class=""><a href="progression">Progress</a></li>
+            <li class=""><a href="login">Log In Here!</a></li>
+            <li class=""><a href="register">Don't have an account? Register here!</a></li>
+            <li class=""><a href="about">About us</a></li>
         </ul>
     </nav>
+    {% block content %}
+    {% endblock content%}
 </body>
 </html>
