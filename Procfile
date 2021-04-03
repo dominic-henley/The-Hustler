@@ -1,1 +1,1 @@
-web: gunicorn main:main
+web: gunicorn "Hackiethon2020:home()"
