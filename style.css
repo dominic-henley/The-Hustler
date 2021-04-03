@@ -10,4 +10,6 @@
   text-align: center;
   line-height: 70px;
   color: white;
+  transition: width 1s cubic-bezier(0.74, 0.29, 0.43, 0.89);
+ /* tungsten bold */
 }
