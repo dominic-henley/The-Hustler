@@ -1,13 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
-<body onload="move()">
+<body id="body1" onload="move()">
     <div id="myProgress">
         <div id="myBar">10%</div>
     </div>
+    <br>
+    <button onclick="location.reload()">Click Me</button>
 
-<br>
-<button onclick="location.reload()">Click Me</button>
+    <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+
+    <ul id="myUL">
+        <li>Get Some Sleep</li>
+        <li>Finish Homework</li>
+    </ul>
+
+    <p>Complete tasks to fill in this bar!</p>
 <script type=text/javascript src="{{ url_for('static', filename='progressionbar.js') }}"></script>
-<p>Complete tasks to fill in this bar!</p>
+
 </body>
 {% endblock content %}
