@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Progression</title>
-    <link href="../static/style.css" rel="stylesheet" type="text/css">
-    <!-- <script type="text/javascript" src="../progressionbar.js"></script> -->
-
-</head>
+{% extends "layout.html" %}
+{% block content %}
 <body onload="move()">
     <div id="myProgress">
         <div id="myBar">10%</div>
@@ -16,5 +9,4 @@
 <button onclick="location.reload()">Click Me</button>
 <script type=text/javascript src="{{ url_for('static', filename='progressionbar.js') }}"></script>
 </body>
-
-</html>
+{% endblock content %}

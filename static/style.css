@@ -14,77 +14,83 @@
  /* tungsten bold */
 }
 
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  /*background: ; */
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
 }
 
-header {
-  overflow: hidden;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 100px;
-  background: #fff;
-  padding: 0 40px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 3px solid #000;
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
 }
 
-.nav ul {
-  display: flex;
-  margin: 0;
-  z-index: 1;
+.bg-steel {
+  background-color: #964B00;
 }
 
-.nav ul li {
-  padding-top: 50px;
-  list-style: none;
-  line-height: 40px;
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
 }
 
-.nav ul li a {
-  color: #000;
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
   text-decoration: none;
-  font-size: 20px;
-  /* font-family: */;
-  padding: 0 70px;
 }
 
-.line::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #E8E3D0;
-  transition: width .7s;
- }
-
-.line:hover::after {
-  width: 0;
-  transition: width .3s;
+.article-content {
+  white-space: pre-line;
 }
 
-.footer {
-  display: grid;
-  /* grid-template-columns: 50% 50%; */
-  background-color: #fff;
-  color: #000;
-  width: 100%;
-  height: 200px;
-  position: absolute;
-  border-top: 3px solid #000;
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
 }
