@@ -1,9 +1,7 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistrationForm, LoginForm
-
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = '3f3040542f9e39e5cc0a30ac826f383d'
+from flask import render_template, url_for, flash, redirect
+from package import app
+from package.forms import RegistrationForm, LoginForm
+from package.dbmodels import User, Post
 
 posts = [
     {
@@ -50,8 +48,3 @@ def login():
 @app.route("/progression")
 def test():
     return render_template('progression.html', title="progression")
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
