@@ -1,28 +1,14 @@
 from flask import render_template, url_for, flash, redirect, request
 from package import app, db, bcrypt
-from package.forms import RegistrationForm, LoginForm
+from package.forms import RegistrationForm, LoginForm, PostForm
 from package.dbmodels import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
-
-posts = [
-    {
-        'title': 'This is a title',
-        'name': 'Test1',
-        'paragraph': 'this is a test',
-        'content': 'foo'
-    },
-    {
-        'title': 'This is also a title',
-        'name': 'Test2',
-        'paragraph': 'this is also a test',
-        'content': 'bar'
-    }
-]
 
 
 @app.route("/")
 @app.route("/home")
 def home():
+    posts = Post.query.all()
     return render_template('homepage.html', posts=posts)
 
 @app.route("/about")
@@ -76,3 +62,23 @@ def account():
 @login_required
 def test():
     return render_template('progression.html', title="progression")
+
+
+@app.route("/post/new", methods=['GET', 'POST'])
+@login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created!', 'success')
+        return redirect(url_for('home'))
+    return render_template('create_post.html', title='New Post',
+                           form=form, legend='New Post')
+
+
+@app.route("/post/<int:post_id>")
+def post(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('post.html', title=post.title, post=post)
