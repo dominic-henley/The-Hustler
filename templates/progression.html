@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Progression</title>
     <link href="../static/style.css" rel="stylesheet" type="text/css">
     <!-- <script type="text/javascript" src="../progressionbar.js"></script> -->
@@ -11,9 +12,21 @@
     <div id="myProgress">
         <div id="myBar">10%</div>
     </div>
+    <br>
+    <button onclick="location.reload()">Click Me</button>
 
-<br>
-<button onclick="location.reload()">Click Me</button>
+    <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+
+    <ul id="myUL">
+        <li>Get Some Sleep</li>
+        <li>Finish Homework</li>
+    </ul>
+
+
 <script type=text/javascript src="{{ url_for('static', filename='progressionbar.js') }}"></script>
 </body>
 
