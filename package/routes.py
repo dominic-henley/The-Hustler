@@ -57,13 +57,6 @@ def logout():
 def account():
     return render_template('account.html', title='Account')
 
-
-@app.route("/progression")
-@login_required
-def test():
-    return render_template('progression.html', title="progression")
-
-
 @app.route("/post/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
